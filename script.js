@@ -21,49 +21,49 @@ for(var i=0;i<navMenuAnchorTags.length;i++){
 }
 
 
-var progressBars=document.querySelectorAll('.skill-progress >div');
-var skillsContainer=document.getElementById('skills-container');
-console.log(skillsContainer);
-window.addEventListener('scroll',checkScroll);
-var animationDone=false;
+// var progressBars=document.querySelectorAll('.skill-progress >div');
+// var skillsContainer=document.getElementById('skills-container');
+// console.log(skillsContainer);
+// window.addEventListener('scroll',checkScroll);
+// var animationDone=false;
 
-function initializeBars()
-{
-    for(let bar of progressBars){
-        bar.style.width=0 +'%';
-    }
-}
-initializeBars();
+// function initializeBars()
+// {
+//     for(let bar of progressBars){
+//         bar.style.width=0 +'%';
+//     }
+// }
+// initializeBars();
 
-function fillBars(){
-    for(let bar of progressBars)
-    {
-        let targetWidth=bar.getAttribute('data-bar-width');
-        let currentWidth=0;
-        let interval=setInterval(function(){
-        if(currentWidth > targetWidth)
-        {
-            clearInterval(interval);
-            return;
-        }
-        currentWidth++;
-        bar.style.width=currentWidth +'%';
-        },1);
-    }
-}
-function checkScroll()
-{
-    var coordinates = skillsContainer.getBoundingClientRect();
-    if(!animationDone && coordinates.top<=window.innerHeight)
-    {
-    animationDone=true;
-    console.log("skills section visible");
-    fillBars();
-    }
-    else if(coordinates.top>window.innerHeight)
-    {
-        animationDone=false;
-        initializeBars();
-    }
-}
+// function fillBars(){
+//     for(let bar of progressBars)
+//     {
+//         let targetWidth=bar.getAttribute('data-bar-width');
+//         let currentWidth=0;
+//         let interval=setInterval(function(){
+//         if(currentWidth > targetWidth)
+//         {
+//             clearInterval(interval);
+//             return;
+//         }
+//         currentWidth++;
+//         bar.style.width=currentWidth +'%';
+//         },1);
+//     }
+// }
+// function checkScroll()
+// {
+//     var coordinates = skillsContainer.getBoundingClientRect();
+//     if(!animationDone && coordinates.top<=window.innerHeight)
+//     {
+//     animationDone=true;
+//     console.log("skills section visible");
+//     fillBars();
+//     }
+//     else if(coordinates.top>window.innerHeight)
+//     {
+//         animationDone=false;
+//         initializeBars();
+//     }
+// }
 
